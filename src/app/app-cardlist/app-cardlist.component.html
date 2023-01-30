@@ -1,0 +1,22 @@
+<!-- <div class="container">
+<div class="card-group">
+<app-app-card *ngFor="let Card of mCards"
+[index]="Card.index"
+[imgPath]="Card.imgPath"
+[cardTitle]="Card.cardTitle"
+[cardText]="Card.cardText"
+>
+</app-app-card>
+   
+  </div>
+</div> -->
+
+
+<div class="container" >
+    <div cdkDropList cdkDropListOrientation="vertical"  (cdkDropListDropped)="drop($event)">
+        <app-app-card *ngFor="let Card of mCards" [index]="Card.index" [imgPath]="Card.imgPath"
+            [cardTitle]="Card.cardTitle" [cardText]="Card.cardText" cdkDrag>
+        </app-app-card>
+
+    </div>
+</div>
